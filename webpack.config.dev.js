@@ -1,4 +1,6 @@
 const path = require("path");
+const { CheckerPlugin } = require('awesome-typescript-loader')
+
 
 module.exports = {
   mode: "development",
@@ -13,9 +15,9 @@ module.exports = {
   },
   module: {
     rules: [{
-      test: /\.(ts|tsx)$/,
-      use: ['babel-loader', 'awesome-typescript-loader']
-    }, {
+        test: /\.tsx?$/,
+        loader: 'awesome-typescript-loader'
+      },{
       test: /\.css$/,
       use: [
         'style-loader',
@@ -27,16 +29,13 @@ module.exports = {
             localIdentName: '[path][name]__[local]--[hash:base64:5]',
             sourceMap: true,
           }},
-        {
-          loader: "postcss-loader",
-          options: {
-            sourceMap: true,
-          }
-        }
       ]
     }],
   },
+  plugins: [
+    new CheckerPlugin()
+  ],
   devServer: {
-    contentBase: path.resolve("static"),
+    contentBase: path.resolve(__dirname, "./static"),
   },
 };

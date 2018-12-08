@@ -1,4 +1,4 @@
 @import "reset.css";
 .test {
-  color: color(red a(70%));
+  color: #f00;
 }

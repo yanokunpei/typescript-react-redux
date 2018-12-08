@@ -1,5 +1,4 @@
 import * as React from "react";
-import { hot } from "react-hot-loader";
 import * as styles from "../css/index.css";
 interface State {
   text: string;
@@ -8,7 +7,7 @@ export function t(a: string): string {
   return a === "" ? "hello, world!" : a;
 }
 
-class App extends React.Component<{}, State> {
+export class App extends React.Component<{}, State> {
   state = { text: "" };
   render() {
     return (
@@ -25,5 +24,3 @@ class App extends React.Component<{}, State> {
     );
   }
 }
-
-export default hot(module)(App);
