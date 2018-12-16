@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component 1`] = `
+<div>
+  hello, world!
+  <br />
+  <input
+    onChange={[Function]}
+    value=""
+  />
+</div>
+`;
+
+exports[`App component 2`] = `
+<div>
+  test text
+  <br />
+  <input
+    onChange={[Function]}
+    value="test text"
+  />
+</div>
+`;

@@ -13,6 +13,11 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.tsx?$/,
+        exclude: [
+          /node_modules/,
+          "**/*.test.ts",
+          "**/*.test.tsx",
+        ],
         loader: "awesome-typescript-loader",
       },
       {
