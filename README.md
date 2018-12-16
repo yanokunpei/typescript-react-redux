@@ -1,4 +1,4 @@
-# Typescript-React-Boilerplate
+# Typescript-React-CssModules-Boilerplate
 
 ## Requirement
 - Yarn
