@@ -102,19 +102,15 @@ section {
   display: block;
 }
 
-nav ul {
-  list-style: none;
-}
-
 blockquote,
 q {
   quotes: none;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
   content: "";
   content: none;
 }
@@ -174,5 +170,9 @@ select {
 
 ul,
 ol {
+  list-style: none;
+}
+
+nav ul {
   list-style: none;
 }

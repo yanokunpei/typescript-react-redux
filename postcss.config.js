@@ -3,6 +3,6 @@ module.exports = {
     require("stylelint")(),
     require('postcss-reporter')({clearMessages: true}),
     require("postcss-import")(),
-    require("postcss-cssnext")(),
-  ]
+    require('postcss-preset-env')(),
+  ],
 };

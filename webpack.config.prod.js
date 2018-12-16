@@ -46,10 +46,11 @@ module.exports = merge(common, {
             loader: "css-loader",
             options: {
               modules: true,
-              importLoaders: 0,
+              importLoaders: 1,
               localIdentName: "[hash:base64]",
             },
           },
+          "postcss-loader",
         ],
       },
     ],

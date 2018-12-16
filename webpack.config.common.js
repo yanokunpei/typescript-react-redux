@@ -2,7 +2,7 @@ const { CheckerPlugin } = require("awesome-typescript-loader");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.tsx",
+  entry: ["./src/index.tsx", "./src/css/index.css"],
   resolve: {
     extensions: [".ts", ".tsx", ".js", "html", "css"],
   },

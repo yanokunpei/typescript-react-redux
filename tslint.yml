@@ -30,3 +30,4 @@ rules:
     severity: warning
   no-namespace: false
   no-shadowed-variable: false
+  no-default-export: true
