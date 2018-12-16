@@ -1,6 +1,6 @@
 const path = require("path");
-const { CheckerPlugin } = require('awesome-typescript-loader')
-
+const { CheckerPlugin } = require('awesome-typescript-loader');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: "development",
@@ -11,7 +11,7 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   resolve: {
-    extensions: [".ts", ".tsx", ".js"]
+    extensions: [".ts", ".tsx", ".js", "html", "css"]
   },
   module: {
     rules: [{
@@ -30,12 +30,22 @@ module.exports = {
             sourceMap: true,
           }},
       ]
+    },{
+      test: /\.html$/,
+      loader: "html-loader"
     }],
   },
   plugins: [
-    new CheckerPlugin()
+    new CheckerPlugin(),
+    new HtmlWebpackPlugin({
+      template: "./static/index.html",
+    }),
   ],
   devServer: {
     contentBase: path.resolve(__dirname, "./static"),
+    open:true,
+    openPage:"dist/",
+    historyApiFallback: true,
   },
 };
+

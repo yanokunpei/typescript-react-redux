@@ -1,0 +1,32 @@
+rulesDirectory:
+  - tslint-plugin-prettier
+extends:
+  - tslint:recommended
+  - tslint-react
+  - tslint-config-prettier
+rules:
+  prettier: true
+  jsx-no-lambda: false
+  curly:
+  - true
+  - as-needed
+  interface-name: false
+  member-access:
+  - true
+  - no-public
+  triple-equals:
+  - true
+  - allow-undefined-check
+  max-classes-per-file: false
+  object-literal-sort-keys: false
+  ordered-imports: false
+  variable-name:
+  - true
+  - ban-keywords
+  - check-format
+  - allow-leading-underscore
+  - allow-pascal-case
+  no-console:
+    severity: warning
+  no-namespace: false
+  no-shadowed-variable: false

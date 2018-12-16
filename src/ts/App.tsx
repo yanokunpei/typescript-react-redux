@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as styles from "../css/index.css";
+import * as styles from "../css/app.css";
 interface State {
   text: string;
 }
@@ -11,7 +11,7 @@ export class App extends React.Component<{}, State> {
   state = { text: "" };
   render() {
     return (
-      <div className={styles.test}>
+      <div className={styles.colorBlue}>
         {t(this.state.text)}
         <br />
         <input

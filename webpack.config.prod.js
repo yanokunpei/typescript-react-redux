@@ -1,7 +1,10 @@
 const path = require("path");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const {CheckerPlugin} = require('awesome-typescript-loader');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 const mode = "production";
 
@@ -10,37 +13,60 @@ module.exports = {
   entry: "./src/index.tsx",
   output: {
     path: path.resolve(__dirname, "build"),
-    filename: "dist/bundle.js",
+    filename: "dist/bundle.[hash].js",
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js"]
+    extensions: [".ts", ".tsx", ".js", "css"]
+  },
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+      }),
+      new OptimizeCSSAssetsPlugin({}),
+    ]
   },
   module: {
     rules: [{
       test: /\.(ts|tsx)$/,
-      use: ['babel-loader', 'awesome-typescript-loader']
-    }, {
+      use: [{
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            '@babel/preset-env',
+            '@babel/react',
+          ]
+        },
+      }, 'awesome-typescript-loader']
+    },
+      {
       test: /\.css$/,
-      use: ExtractTextPlugin.extract({
-        use: [{
-          loader: 'css-loader',
+      use: [
+        MiniCssExtractPlugin.loader,
+        {
+          loader: "css-loader",
           options: {
-            minimize: true,
             modules: true,
-            importLoaders: 1,
-            localIdentName: '[local]--[hash:base64:5]',
+            importLoaders: 0,
+            localIdentName: '[hash:base64]',
           }
-        }, {
-          loader: "postcss-loader",
-        }]
-      })
-    }],
+        },
+      ]
+    },{
+        test: /\.html$/,
+        loader: "html-loader"
+      }
+    ],
   },
   plugins: [
-    new ExtractTextPlugin(path.relative(__dirname, 'dist/style.css')),
-    new CopyWebpackPlugin([
-      { from: 'static/*', to: './', flatten: true },
-    ]),
-    new UglifyJsPlugin(),
+    new CheckerPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "dist/style.[hash].css",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./static/index.html"
+    }),
+    new CleanWebpackPlugin(["build"]),
   ],
 };
