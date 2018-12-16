@@ -30,8 +30,7 @@ module.exports = merge(common, {
         test: /\.(ts|tsx)$/,
         exclude: [
           /node_modules/,
-          "**/*.test.ts",
-          "**/*.test.tsx",
+          /\*\.test\.tsx?$/,
         ],
         use: [
           {
