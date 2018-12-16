@@ -1,5 +1,5 @@
 .idea
-build
+dist
 *.css.d.ts
 # Created by .ignore support plugin (hsz.mobi)
 ### macOS template

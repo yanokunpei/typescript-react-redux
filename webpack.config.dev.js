@@ -1,51 +1,42 @@
+const merge = require("webpack-merge");
+const common = require("./webpack.config.common.js");
 const path = require("path");
-const { CheckerPlugin } = require('awesome-typescript-loader');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = {
+module.exports = merge(common, {
   mode: "development",
-  entry: "./src/index.tsx",
   output: {
     publicPath: "/dist/",
     filename: "bundle.js",
   },
-  devtool: 'inline-source-map',
-  resolve: {
-    extensions: [".ts", ".tsx", ".js", "html", "css"]
-  },
+  devtool: "inline-source-map",
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.tsx?$/,
-        loader: 'awesome-typescript-loader'
-      },{
-      test: /\.css$/,
-      use: [
-        'style-loader',
-        {
-          loader: 'css-loader',
-          options: {
-            modules: true,
-            importLoaders: 1,
-            localIdentName: '[path][name]__[local]--[hash:base64:5]',
-            sourceMap: true,
-          }},
-      ]
-    },{
-      test: /\.html$/,
-      loader: "html-loader"
-    }],
+        loader: "awesome-typescript-loader",
+      },
+      {
+        test: /\.css$/,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              modules: true,
+              importLoaders: 1,
+              localIdentName: "[path][name]__[local]--[hash:base64:5]",
+              sourceMap: true,
+            },
+          },
+        ],
+      },
+    ],
   },
-  plugins: [
-    new CheckerPlugin(),
-    new HtmlWebpackPlugin({
-      template: "./static/index.html",
-    }),
-  ],
+
   devServer: {
     contentBase: path.resolve(__dirname, "./static"),
-    open:true,
-    openPage:"dist/",
+    open: true,
+    openPage: "dist/",
     historyApiFallback: true,
   },
-};
-
+});
