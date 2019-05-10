@@ -1,47 +1,44 @@
-const merge = require("webpack-merge");
-const common = require("./webpack.config.common.js");
-const path = require("path");
+const merge = require('webpack-merge');
+const common = require('./webpack.config.common.js');
+const path = require('path');
 
 module.exports = merge(common, {
-  mode: "development",
+  mode: 'development',
   output: {
-    publicPath: "/dist/",
-    filename: "bundle.js",
+    publicPath: '/dist/',
+    filename: 'bundle.js',
   },
-  devtool: "inline-source-map",
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        exclude: [
-          /node_modules/,
-          /\*\.test\.tsx?$/,
-        ],
-        loader: "awesome-typescript-loader",
+        exclude: [/node_modules/, /\*\.test\.tsx?$/],
+        loader: 'awesome-typescript-loader',
       },
       {
         test: /\.css$/,
         use: [
-          "style-loader",
+          'style-loader',
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
               modules: true,
               importLoaders: 1,
-              localIdentName: "[path][name]__[local]--[hash:base64:5]",
+              localIdentName: '[path][name]__[local]--[hash:base64:5]',
               sourceMap: true,
             },
           },
-          "postcss-loader",
+          'postcss-loader',
         ],
       },
     ],
   },
 
   devServer: {
-    contentBase: path.resolve(__dirname, "./static"),
+    contentBase: path.resolve(__dirname, './static'),
     open: true,
-    openPage: "dist/",
+    openPage: 'dist/',
     historyApiFallback: true,
   },
 });

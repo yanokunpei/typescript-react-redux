@@ -9,7 +9,7 @@
     "tcm-watch": "tcm -w src/css",
     "test": "jest",
     "fmt": "yarn tslint --fix & yarn stylelint --fix & yarn prettier",
-    "prettier": "prettier --write ./src/**/*.{ts,tsx,css}",
+    "prettier": "prettier --write './**/*.{ts,tsx,css,yml,js}'",
     "lint": "yarn tslint && yarn stylelint",
     "tslint": "tslint 'src/ts/*.{ts,tsx}'",
     "stylelint": "stylelint './src/**/*.css'",
