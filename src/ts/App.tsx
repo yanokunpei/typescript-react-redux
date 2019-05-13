@@ -1,21 +1,14 @@
 import * as React from 'react';
-import { ChangeEvent } from 'react';
+import { useState } from 'react';
 import * as styles from '../css/app.css';
 
-interface State {
-  text: string;
-}
-
-export class App extends React.Component<{}, State> {
-  state = { text: '' };
-  handleChange = (e: ChangeEvent<HTMLInputElement>) => this.setState({ text: e.target.value });
-  render() {
-    return (
-      <div className={styles.colorBlue}>
-        {this.state.text ? this.state.text : 'hello, world!'}
-        <br />
-        <input value={this.state.text} onChange={this.handleChange} />
-      </div>
-    );
-  }
-}
+export const App = () => {
+  const [text, setText] = useState('');
+  return (
+    <div className={styles.colorBlue}>
+      {text || 'hello, world!'}
+      <br />
+      <input value={text} onChange={e => setText(e.target.value)} />
+    </div>
+  );
+};

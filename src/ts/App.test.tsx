@@ -1,5 +1,5 @@
 import * as React from 'react';
-import renderer from 'react-test-renderer';
+import renderer, { act } from 'react-test-renderer';
 import { App } from './App';
 
 test('App component', () => {
@@ -7,7 +7,7 @@ test('App component', () => {
   let tree = component.toJSON()!;
   expect(tree).toMatchSnapshot();
 
-  tree.children!.find(it => it.type === 'input')!.props.onChange({ target: { value: 'test text' } });
+  act(() => tree.children!.find(it => it.type === 'input')!.props.onChange({ target: { value: 'test text' } }));
   // re-rendering
   tree = component.toJSON()!;
   expect(tree).toMatchSnapshot();
