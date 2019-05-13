@@ -3,17 +3,16 @@
   "version": "2.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "yarn tcm-watch & webpack-dev-server --open --mode development --inline --hot --localhost --config webpack.config.dev.js",
+    "start": "yarn tcm-watch & webpack-dev-server --open --mode development --inline --hot --localhost --config build/webpack.config.dev.js",
     "prebuild": "tcm src/css",
-    "build": "webpack --mode production --config webpack.config.prod.js",
+    "build": "webpack --mode production --config build/webpack.config.prod.js",
     "tcm-watch": "tcm -w src/css",
-    "test": "jest",
+    "test": "jest --coverage",
     "fmt": "yarn tslint --fix & yarn stylelint --fix & yarn prettier",
     "prettier": "prettier --write './**/*.{ts,tsx,css,yml,js}'",
     "lint": "yarn tslint && yarn stylelint",
     "tslint": "tslint -p tsconfig.json 'src/ts/*.{ts,tsx}'",
-    "stylelint": "stylelint './src/**/*.css'",
-    "tslint-check-prettier": "tslint-config-prettier-check ./tslint.json"
+    "stylelint": "stylelint './src/**/*.css'"
   },
   "dependencies": {
     "react": "^16.8.6",

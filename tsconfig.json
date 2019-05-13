@@ -58,9 +58,9 @@
     "dist",
     "jest.config.js",
     "postcss.config.js",
-    "webpack.config.common.js",
-    "webpack.config.dev.js",
-    "webpack.config.prod.js",
+    "build/webpack.config.common.js",
+    "build/webpack.config.dev.js",
+    "build/webpack.config.prod.js",
     "node_modules"
   ]
 }
