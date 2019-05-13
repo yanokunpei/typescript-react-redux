@@ -60,6 +60,6 @@ module.exports = merge(common, {
     new MiniCssExtractPlugin({
       filename: 'assets/style.[hash].css',
     }),
-    new CleanWebpackPlugin([outDir]),
+    new CleanWebpackPlugin(),
   ],
 });
