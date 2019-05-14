@@ -5,15 +5,16 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const Visualizer = require('webpack-visualizer-plugin');
 
 const mode = 'production';
-const outDir = 'dist';
+const outDir = '../dist';
 
 module.exports = merge(common, {
   mode: mode,
   output: {
     path: path.resolve(__dirname, outDir),
-    filename: 'assets/bundle.[hash].js',
+    filename: `assets/[name].[hash].js`,
   },
   optimization: {
     minimizer: [
@@ -23,6 +24,16 @@ module.exports = merge(common, {
       }),
       new OptimizeCSSAssetsPlugin({}),
     ],
+    splitChunks: {
+      name: true,
+      cacheGroups: {
+        react: {
+          test: /react/,
+          name: 'react',
+          chunks: 'all',
+        },
+      },
+    },
   },
   module: {
     rules: [
@@ -59,7 +70,11 @@ module.exports = merge(common, {
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'assets/style.[hash].css',
+      chunkFilename: 'assets/style.[id].[hash].css',
     }),
     new CleanWebpackPlugin(),
+    new Visualizer({
+      filename: '../stats/statistics.html'
+    }),
   ],
 });
