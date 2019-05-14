@@ -1,3 +1,5 @@
-.colorBlue {
+.app {
   color: var(--primaryColor);
+  width: 250px;
+  margin: 10vh auto;
 }

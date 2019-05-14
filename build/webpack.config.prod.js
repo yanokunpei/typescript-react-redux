@@ -74,7 +74,7 @@ module.exports = merge(common, {
     }),
     new CleanWebpackPlugin(),
     new Visualizer({
-      filename: '../stats/statistics.html'
+      filename: '../stats/statistics.html',
     }),
   ],
 });

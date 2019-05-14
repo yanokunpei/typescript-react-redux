@@ -2,6 +2,12 @@
 
 exports[`App component 1`] = `
 <div>
+  <img
+    alt="logo"
+    height="16px"
+    src="./images/logo.svg"
+    width="16px"
+  />
   hello, world!
   <br />
   <input
@@ -13,6 +19,12 @@ exports[`App component 1`] = `
 
 exports[`App component 2`] = `
 <div>
+  <img
+    alt="logo"
+    height="16px"
+    src="./images/logo.svg"
+    width="16px"
+  />
   test text
   <br />
   <input
