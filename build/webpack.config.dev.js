@@ -1,3 +1,4 @@
+process.env.NODE_ENV = 'development';
 const merge = require('webpack-merge');
 const common = require('./webpack.config.common.js');
 const path = require('path');
@@ -29,7 +30,6 @@ module.exports = merge(common, {
       },
     ],
   },
-
   devServer: {
     contentBase: path.resolve(__dirname, './static'),
     open: true,

@@ -1,15 +1,19 @@
+import * as History from 'history';
 import * as React from 'react';
-import { useState } from 'react';
-import * as styles from '../css/app.css';
+import { Provider } from 'react-redux';
+import { BrowserRouter, Route, Router } from 'react-router-dom';
+import { HomeContainer } from './pages/home/Home';
+import { store } from './store';
+const history = History.createBrowserHistory();
 
 export const App = () => {
-  const [text, setText] = useState('');
   return (
-    <div className={styles.app}>
-      <img height={'16px'} width={'16px'} src={'./images/logo.svg'} alt={'logo'} />
-      {text || 'hello, world!'}
-      <br />
-      <input value={text} onChange={e => setText(e.target.value)} />
-    </div>
+    <Provider store={store}>
+      <Router history={history}>
+        <BrowserRouter>
+          <Route path="/" component={HomeContainer} />
+        </BrowserRouter>
+      </Router>
+    </Provider>
   );
 };

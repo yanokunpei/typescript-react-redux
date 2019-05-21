@@ -1,6 +1,6 @@
-const { CheckerPlugin } = require('awesome-typescript-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   entry: ['./src/ts/index.tsx', './src/css/index.css'],
@@ -12,10 +12,7 @@ module.exports = {
       {
         test: /\.(ts|tsx)$/,
         exclude: [/node_modules/, /\*\.test\.tsx?$/],
-        use: [
-          { loader: "babel-loader"},
-          { loader: "ts-loader" },
-        ],
+        use: [{ loader: 'babel-loader' }, { loader: 'ts-loader' }],
       },
       {
         test: /\.html$/,
@@ -24,10 +21,14 @@ module.exports = {
     ],
   },
   plugins: [
-    new CheckerPlugin(),
     new HtmlWebpackPlugin({
       template: './static/index.html',
     }),
     new CopyPlugin([{ from: './static', to: '../dist', ignore: 'index.html' }]),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV || ''),
+      },
+    }),
   ],
 };

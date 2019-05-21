@@ -1,35 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App component 1`] = `
-<div>
+<section
+  className="app"
+>
+  <h1>
+    Home
+  </h1>
   <img
     alt="logo"
-    height="16px"
+    height={16}
     src="./images/logo.svg"
-    width="16px"
+    width={16}
   />
   hello, world!
   <br />
   <input
     onChange={[Function]}
+    type="text"
     value=""
   />
-</div>
+</section>
 `;
 
 exports[`App component 2`] = `
-<div>
+<section
+  className="app"
+>
+  <h1>
+    Home
+  </h1>
   <img
     alt="logo"
-    height="16px"
+    height={16}
     src="./images/logo.svg"
-    width="16px"
+    width={16}
   />
   test text
   <br />
   <input
     onChange={[Function]}
+    type="text"
     value="test text"
   />
-</div>
+</section>
 `;

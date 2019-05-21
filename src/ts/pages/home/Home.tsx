@@ -1,0 +1,36 @@
+import * as React from 'react';
+import { connect } from 'react-redux';
+import { Action, Dispatch } from 'redux';
+import styles from '../../../css/app.css';
+import { AppState } from '../../store';
+import { changeText } from './modules';
+
+interface Props {
+  text: string;
+  actions: ActionDispatcher;
+}
+
+class ActionDispatcher {
+  constructor(private dispatch: Dispatch<Action<unknown>>) {}
+  changeText(text: string) {
+    this.dispatch(changeText(text));
+  }
+}
+
+const Home = (props: Props) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => props.actions.changeText(e.target.value);
+  return (
+    <section className={styles.app}>
+      <h1>Home</h1>
+      <img src={'./images/logo.svg'} alt={'logo'} height={16} width={16} />
+      {props.text || 'hello, world!'}
+      <br />
+      <input type={'text'} value={props.text} onChange={handleChange} />
+    </section>
+  );
+};
+
+export const HomeContainer = connect(
+  (state: AppState) => state.home,
+  dispatch => ({ actions: new ActionDispatcher(dispatch) })
+)(Home);
