@@ -1,6 +1,7 @@
-# Typescript-React-CssModules-Boilerplate
+# Typescript-React-Redux
 
 ## Requirement
+- Node
 - Yarn
 
 ## Scripts
@@ -8,6 +9,3 @@
 - build
 - fmt: run stylelint --fix & prettier
 - test: Jest
-
-
-
