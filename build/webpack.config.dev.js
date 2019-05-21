@@ -12,11 +12,6 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        exclude: [/node_modules/, /\*\.test\.tsx?$/],
-        loader: 'awesome-typescript-loader',
-      },
-      {
         test: /\.css$/,
         use: [
           'style-loader',

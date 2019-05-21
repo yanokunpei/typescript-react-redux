@@ -10,6 +10,14 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(ts|tsx)$/,
+        exclude: [/node_modules/, /\*\.test\.tsx?$/],
+        use: [
+          { loader: "babel-loader"},
+          { loader: "ts-loader" },
+        ],
+      },
+      {
         test: /\.html$/,
         loader: 'html-loader',
       },

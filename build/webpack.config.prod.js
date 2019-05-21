@@ -38,19 +38,6 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/,
-        exclude: [/node_modules/, /\*\.test\.tsx?$/],
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env', '@babel/react'],
-            },
-          },
-          'awesome-typescript-loader',
-        ],
-      },
-      {
         test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
