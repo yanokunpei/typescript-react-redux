@@ -1,4 +1,4 @@
-# Typescript-React-Redux
+# Typescript-React-Redux-Saga-Example
 
 ## Requirement
 - Node

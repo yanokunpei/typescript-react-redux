@@ -1,23 +1,28 @@
 import { applyMiddleware, combineReducers, createStore, Store } from 'redux';
 import { createLogger } from 'redux-logger';
+import createSagaMiddleware from 'redux-saga';
 import { HomeAction, homeReducer, HomeState } from './pages/home/modules';
+import { rootSaga } from './saga';
 
-// tslint:disable-next-line:no-any
-let middleware: any | undefined;
+const middleware = [];
 if (process.env.NODE_ENV === 'development') {
   const logger = createLogger({
     diff: true,
     collapsed: true,
   });
-  middleware = applyMiddleware(logger);
+  middleware.push(logger);
 }
 
+const sagaMiddleware = createSagaMiddleware();
+middleware.push(sagaMiddleware);
 export const store: Store<AppState, AppAction> = createStore(
   combineReducers({
     home: homeReducer,
   }),
-  middleware
+  applyMiddleware(...middleware)
 );
+
+sagaMiddleware.run(rootSaga);
 
 export interface AppState {
   home: HomeState;

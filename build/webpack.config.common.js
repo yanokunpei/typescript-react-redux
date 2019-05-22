@@ -3,7 +3,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: ['./src/ts/index.tsx', './src/css/index.css'],
+  entry: ['@babel/polyfill', './src/ts/index.tsx', './src/css/index.css'],
   resolve: {
     extensions: ['.ts', '.tsx', '.js', 'html', 'css'],
   },
