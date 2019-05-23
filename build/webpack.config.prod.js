@@ -5,12 +5,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const Visualizer = require('webpack-visualizer-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const mode = 'production';
 const outDir = '../dist';
 
-module.exports = merge(common, {
+module.exports = (env, argv) => merge(common(env, argv), {
   mode: mode,
   output: {
     path: path.resolve(__dirname, outDir),
@@ -26,10 +26,16 @@ module.exports = merge(common, {
     ],
     splitChunks: {
       name: true,
+      maxInitialRequests: 4,
       cacheGroups: {
         react: {
-          test: /react/,
+          test: /[\\/]node_modules[\\/]react/,
           name: 'react',
+          chunks: 'all',
+        },
+        babel: {
+          test: /[\\/]node_modules[\\/]@babel/,
+          name: 'polyfill',
           chunks: 'all',
         },
       },
@@ -60,8 +66,6 @@ module.exports = merge(common, {
       chunkFilename: 'assets/style.[id].[hash].css',
     }),
     new CleanWebpackPlugin(),
-    new Visualizer({
-      filename: '../stats/statistics.html',
-    }),
+    new BundleAnalyzerPlugin(),
   ],
 });

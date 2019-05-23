@@ -3,7 +3,7 @@ const merge = require('webpack-merge');
 const common = require('./webpack.config.common.js');
 const path = require('path');
 
-module.exports = merge(common, {
+module.exports = (env, argv) => merge(common(env, argv), {
   mode: 'development',
   output: {
     publicPath: '/dist/',

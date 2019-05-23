@@ -1,8 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
-
-module.exports = {
+module.exports = (_, argv) => ({
   entry: ['@babel/polyfill', './src/ts/index.tsx', './src/css/index.css'],
   resolve: {
     extensions: ['.ts', '.tsx', '.js', 'html', 'css'],
@@ -27,8 +26,8 @@ module.exports = {
     new CopyPlugin([{ from: './static', to: '../dist', ignore: 'index.html' }]),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify(process.env.NODE_ENV || ''),
+        NODE_ENV: JSON.stringify(argv.mode),
       },
     }),
   ],
-};
+});
