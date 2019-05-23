@@ -75,9 +75,15 @@
     "webpack-merge": "^4.2.1"
   },
   "lint-staged": {
-    "*.{ts,tsx,css}": [
-      "yarn run fmt",
-      "git add"
+    "linters": {
+      "*.{ts,tsx,css,js,json}": [
+        "yarn run fmt",
+        "git add"
+      ]
+    },
+    "ignore": [
+      "dist",
+      "coverage"
     ]
   },
   "husky": {
