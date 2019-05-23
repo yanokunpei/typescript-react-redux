@@ -1,7 +1,8 @@
 import { applyMiddleware, combineReducers, createStore, Store } from 'redux';
 import { createLogger } from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
-import { HomeAction, homeReducer, HomeState } from './pages/home/modules';
+import { HomeAction } from './pages/home/actions';
+import { homeReducer, HomeState } from './pages/home/reducer';
 import { rootSaga } from './saga';
 
 const middleware = [];

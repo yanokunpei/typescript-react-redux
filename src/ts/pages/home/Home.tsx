@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Action, Dispatch } from 'redux';
 import styles from '../../../css/app.css';
 import { AppState } from '../../store';
-import { changeText, requestRandomText } from './modules';
+import { changeText, requestRandomText } from './actions';
 
 interface Props {
   text: string;
@@ -29,6 +29,7 @@ const Home = (props: Props) => {
       {props.text || 'hello, world!'}
       <br />
       <input type={'text'} value={props.text} onChange={handleChange} />
+      <br />
       <button onClick={props.actions.requestRandomText}>async random text</button>
     </section>
   );
