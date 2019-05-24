@@ -76,7 +76,7 @@
   },
   "lint-staged": {
     "linters": {
-      "*.{ts,tsx,css,js,json}": [
+      "*.{ts,tsx,css,js,json,yml}": [
         "yarn run fmt",
         "git add"
       ]

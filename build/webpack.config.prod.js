@@ -67,6 +67,8 @@ module.exports = (env, argv) =>
         chunkFilename: 'assets/style.[id].[hash].css',
       }),
       new CleanWebpackPlugin(),
-      new BundleAnalyzerPlugin(),
+      new BundleAnalyzerPlugin({
+        analyzerMode: 'static',
+      }),
     ],
   });
