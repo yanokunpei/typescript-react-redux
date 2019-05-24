@@ -1,5 +1,5 @@
 # Typescript-React-Redux-Saga-Example
-
+[![CircleCI](https://circleci.com/gh/yanokunpei/typescript-react-redux.svg?style=svg)](https://circleci.com/gh/yanokunpei/typescript-react-redux)
 ## Requirement
 - Node
 - Yarn
