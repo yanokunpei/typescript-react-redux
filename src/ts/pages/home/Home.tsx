@@ -2,11 +2,13 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { Action, Dispatch } from 'redux';
 import styles from '../../../css/app.css';
+import { Loading } from '../../components/Loading';
 import { AppState } from '../../store';
 import { changeText, requestRandomText } from './actions';
 
 interface Props {
   text: string;
+  isWaiting: boolean;
   actions: ActionDispatcher;
 }
 
@@ -31,6 +33,7 @@ const Home = (props: Props) => {
       <input type={'text'} value={props.text} onChange={handleChange} />
       <br />
       <button onClick={props.actions.requestRandomText}>async random text</button>
+      {props.isWaiting ? <Loading /> : undefined}
     </section>
   );
 };
