@@ -20,6 +20,12 @@ exports[`App component 1`] = `
     type="text"
     value=""
   />
+  <br />
+  <button
+    onClick={[Function]}
+  >
+    async random text
+  </button>
 </section>
 `;
 
@@ -43,5 +49,11 @@ exports[`App component 2`] = `
     type="text"
     value="test text"
   />
+  <br />
+  <button
+    onClick={[Function]}
+  >
+    async random text
+  </button>
 </section>
 `;
