@@ -3,7 +3,7 @@ import { createLogger } from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import { HomeAction } from './pages/home/actions';
 import { homeReducer, HomeState } from './pages/home/reducer';
-import { rootSaga } from './saga';
+import { rootSaga } from './rootSaga';
 
 const middleware = [];
 if (process.env.NODE_ENV === 'development') {
