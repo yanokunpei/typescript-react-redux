@@ -1,25 +1,14 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { Action, Dispatch } from 'redux';
 import styles from '../../../css/app.css';
 import { Loading } from '../../components/Loading';
 import { AppState } from '../../store';
-import { changeText, requestRandomText } from './actions';
+import { HomeActionDispatcher } from './dispatcher';
 
 interface Props {
   text: string;
   isWaiting: boolean;
-  actions: ActionDispatcher;
-}
-
-class ActionDispatcher {
-  constructor(private dispatch: Dispatch<Action<unknown>>) {}
-  changeText = (text: string) => {
-    this.dispatch(changeText(text));
-  };
-  requestRandomText = () => {
-    this.dispatch(requestRandomText());
-  };
+  actions: HomeActionDispatcher;
 }
 
 const Home = (props: Props) => {
@@ -40,5 +29,5 @@ const Home = (props: Props) => {
 
 export const HomeContainer = connect(
   (state: AppState) => state.home,
-  dispatch => ({ actions: new ActionDispatcher(dispatch) })
+  dispatch => ({ actions: new HomeActionDispatcher(dispatch) })
 )(Home);
