@@ -8,8 +8,8 @@ import { rootSaga } from './rootSaga';
 const middleware = [];
 if (process.env.NODE_ENV === 'development') {
   const logger = createLogger({
-    diff: true,
     collapsed: true,
+    diff: true,
   });
   middleware.push(logger);
 }
