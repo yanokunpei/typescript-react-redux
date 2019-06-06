@@ -6,6 +6,7 @@ import { homeReducer, HomeState } from './pages/home/reducer';
 import { rootSaga } from './rootSaga';
 
 const middleware = [];
+declare const process: { env: { NODE_ENV: string } };
 if (process.env.NODE_ENV === 'development') {
   const logger = createLogger({
     collapsed: true,
