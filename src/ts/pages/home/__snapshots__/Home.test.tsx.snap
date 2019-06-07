@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home component 1`] = `
+<section
+  className="app"
+>
+  <h1>
+    Home
+  </h1>
+  <img
+    alt="logo"
+    height={16}
+    src="./images/logo.svg"
+    width={16}
+  />
+  XD
+  <br />
+  <input
+    onChange={[Function]}
+    type="text"
+    value="XD"
+  />
+  <br />
+  <button>
+    async random text
+  </button>
+  <div
+    style={
+      Object {
+        "display": "inline-block",
+        "height": "1rem",
+        "transform": "scale(.2)",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "background": "#2196f3",
+          "height": "30px",
+          "width": "30px",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "background": "#ff96f3",
+          "height": "30px",
+          "width": "30px",
+        }
+      }
+    />
+  </div>
+</section>
+`;
+
+exports[`Home component 2`] = `
+<section
+  className="app"
+>
+  <h1>
+    Home
+  </h1>
+  <img
+    alt="logo"
+    height={16}
+    src="./images/logo.svg"
+    width={16}
+  />
+  (^^)
+  <br />
+  <input
+    onChange={[Function]}
+    type="text"
+    value="(^^)"
+  />
+  <br />
+  <button>
+    async random text
+  </button>
+</section>
+`;

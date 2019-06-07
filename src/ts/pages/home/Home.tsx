@@ -11,7 +11,7 @@ interface Props {
   actions: HomeActionDispatcher;
 }
 
-const Home = (props: Props) => {
+export const Home = (props: Props) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => props.actions.changeText(e.target.value);
   return (
     <section className={styles.app}>
