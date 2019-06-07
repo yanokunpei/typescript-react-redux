@@ -2,7 +2,7 @@ import * as React from 'react';
 import renderer, { act } from 'react-test-renderer';
 import { App } from './App';
 
-test('App component', () => {
+it('App component', () => {
   const component = renderer.create(<App />);
   let tree = component.toJSON()!;
   expect(tree).toMatchSnapshot();
