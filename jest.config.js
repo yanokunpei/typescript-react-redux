@@ -10,4 +10,7 @@ module.exports = {
     '\\.css$': 'identity-obj-proxy',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
+  globals: {
+    DEVELOPMENT: false,
+  },
 };

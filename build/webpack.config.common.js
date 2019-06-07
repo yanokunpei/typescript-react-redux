@@ -25,9 +25,7 @@ module.exports = (_, argv) => ({
     }),
     new CopyPlugin([{ from: './static', to: '../dist', ignore: 'index.html' }]),
     new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify(argv.mode),
-      },
+      DEVELOPMENT: JSON.stringify(argv.mode === 'development'),
     }),
   ],
 });
