@@ -1,6 +1,6 @@
 .idea
 dist
-*.css.d.ts
+src/css/*.css.d.ts
 stats
 
 # Created by .ignore support plugin (hsz.mobi)
