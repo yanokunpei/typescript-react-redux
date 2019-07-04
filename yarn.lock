@@ -959,7 +959,7 @@
   resolved "https://registry.yarnpkg.com/@redux-saga/symbols/-/symbols-1.0.1.tgz#46512ae1275f88df061c42168d0f600ddb170c1e"
   integrity sha512-akKkzcVnb1RzJaZV2LQFbi51abvdICMuAKwwLoCjjxLbLAGIw9EJxk5ucNnWSSCEsoEQMeol5tkAcK+Xzuv1Bg==
 
-"@redux-saga/testing-utils@^1.0.2":
+"@redux-saga/testing-utils@1.0.2":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@redux-saga/testing-utils/-/testing-utils-1.0.2.tgz#e1f6dcbae728e45f7c8d7c03cf763b03abb9c32e"
   integrity sha512-pywf97heIqtapX/Uk4vVFXnpfars1Yh5xJu3mYffZfyMupziAmNe5DW/2HNZiWFnWLyWI9/3ykTo3+cfEGoNcg==
@@ -1048,7 +1048,7 @@
   dependencies:
     "@types/node" "*"
 
-"@types/enzyme@^3.9.3":
+"@types/enzyme@3.9.3":
   version "3.9.3"
   resolved "https://registry.yarnpkg.com/@types/enzyme/-/enzyme-3.9.3.tgz#d1029c0edd353d7b00f3924803eb88216460beed"
   integrity sha512-jDKoZiiMA3lGO3skSO7dfqEHNvmiTLLV+PHD9EBQVlJANJvpY6qq1zzjRI24ZOtG7F+CS7BVWDXKewRmN8PjHQ==
@@ -1204,7 +1204,7 @@
   dependencies:
     redux "^3.6.0"
 
-"@types/sinon@^7.0.12":
+"@types/sinon@7.0.12":
   version "7.0.12"
   resolved "https://registry.yarnpkg.com/@types/sinon/-/sinon-7.0.12.tgz#18412939ae45b225bd38715a25c1040cbad80f42"
   integrity sha512-fo0MWpVPSUrnZZhp9wyu+hhI3VJ9+Jhs+PWrokBTg3d2ryNPDOAWF1csIhQuYWBTn7KdZzXpRgpX2o6cwOlPWg==
@@ -3424,7 +3424,7 @@ entities@^1.1.1, entities@~1.1.1:
   resolved "https://registry.yarnpkg.com/entities/-/entities-1.1.2.tgz#bdfa735299664dfafd34529ed4f8522a275fea56"
   integrity sha512-f2LZMYl1Fzu7YSBKg+RoROelpOaNrcGmE9AZubeDfrCEia483oW4MI4VyFd5VNHIgQ/7qm1I0wUHK1eJnn2y2w==
 
-enzyme@^3.10.0:
+enzyme@3.10.0:
   version "3.10.0"
   resolved "https://registry.yarnpkg.com/enzyme/-/enzyme-3.10.0.tgz#7218e347c4a7746e133f8e964aada4a3523452f6"
   integrity sha512-p2yy9Y7t/PFbPoTvrWde7JIYB2ZyGC+NgTNbVEGvZ5/EyoYSr9aG/2rSbVvyNvMHEhw9/dmGUJHWtfQIEiX9pg==
@@ -5959,7 +5959,7 @@ loader-utils@^1.0.2, loader-utils@^1.1.0, loader-utils@^1.2.3:
     emojis-list "^2.0.0"
     json5 "^1.0.1"
 
-loaders.css@^0.1.2:
+loaders.css@0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/loaders.css/-/loaders.css-0.1.2.tgz#3a9fb43726c73334a38142af9d0629019b658743"
   integrity sha1-Op+0NybHMzSjgUKvnQYpAZtlh0M=
@@ -8526,7 +8526,7 @@ redux-logger@3.0.6:
   dependencies:
     deep-diff "^0.3.5"
 
-redux-saga-test-plan@^4.0.0-beta.3:
+redux-saga-test-plan@4.0.0-beta.3:
   version "4.0.0-beta.3"
   resolved "https://registry.yarnpkg.com/redux-saga-test-plan/-/redux-saga-test-plan-4.0.0-beta.3.tgz#6e1b5cef60a28ecc95453f7009c6d1cd32ab1421"
   integrity sha512-nOA2MsUHlp5JGlGhDo8IbVnKXIh1qLCE4vZE5rz1wvdXLMEk6F9QwfI1LbdaBT0XdrxjeI+JjeUAMZ5sgYfeTA==
@@ -9149,7 +9149,7 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
-sinon@^7.3.2:
+sinon@7.3.2:
   version "7.3.2"
   resolved "https://registry.yarnpkg.com/sinon/-/sinon-7.3.2.tgz#82dba3a6d85f6d2181e1eca2c10d8657c2161f28"
   integrity sha512-thErC1z64BeyGiPvF8aoSg0LEnptSaWE7YhdWWbWXgelOyThent7uKOnnEh9zBxDbKixtr5dEko+ws1sZMuFMA==
