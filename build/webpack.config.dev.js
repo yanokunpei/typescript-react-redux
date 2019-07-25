@@ -20,9 +20,10 @@ module.exports = (env, argv) =>
             {
               loader: 'css-loader',
               options: {
-                modules: true,
+                modules: {
+                  localIdentName: '[path][name]__[local]--[hash:base64:5]',
+                },
                 importLoaders: 1,
-                localIdentName: '[path][name]__[local]--[hash:base64:5]',
                 sourceMap: true,
               },
             },
