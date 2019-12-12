@@ -52,7 +52,7 @@
     "husky": "3.1.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "24.9.0",
-    "lint-staged": "8.2.1",
+    "lint-staged": "9.5.0",
     "mini-css-extract-plugin": "0.8.0",
     "optimize-css-assets-webpack-plugin": "5.0.3",
     "postcss-import": "12.0.1",
