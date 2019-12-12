@@ -65,7 +65,7 @@
     "style-loader": "1.0.1",
     "stylelint": "10.1.0",
     "stylelint-config-prettier": "8.0.0",
-    "stylelint-config-standard": "18.3.0",
+    "stylelint-config-standard": "19.0.0",
     "ts-jest": "24.2.0",
     "ts-loader": "6.2.1",
     "tslint": "5.20.1",
