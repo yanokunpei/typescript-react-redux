@@ -1,8 +1,8 @@
 const merge = require('webpack-merge');
 const common = require('./webpack.config.common.js');
 const path = require('path');
+const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
@@ -18,13 +18,8 @@ module.exports = (env, argv) =>
       filename: `assets/[name].[hash].js`,
     },
     optimization: {
-      minimizer: [
-        new UglifyJsPlugin({
-          cache: true,
-          parallel: true,
-        }),
-        new OptimizeCSSAssetsPlugin({}),
-      ],
+      minimize: true,
+      minimizer: [new TerserPlugin(), new OptimizeCSSAssetsPlugin({})],
       splitChunks: {
         name: true,
         maxInitialRequests: 4,

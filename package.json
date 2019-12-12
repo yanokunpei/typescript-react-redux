@@ -66,6 +66,7 @@
     "stylelint": "12.0.0",
     "stylelint-config-prettier": "8.0.0",
     "stylelint-config-standard": "19.0.0",
+    "terser-webpack-plugin": "^2.2.3",
     "ts-jest": "24.2.0",
     "ts-loader": "6.2.1",
     "tslint": "5.20.1",
@@ -74,7 +75,6 @@
     "tslint-react": "4.1.0",
     "typed-css-modules": "0.6.3",
     "typescript": "3.7.3",
-    "uglifyjs-webpack-plugin": "2.2.0",
     "webpack": "4.41.2",
     "webpack-bundle-analyzer": "3.6.0",
     "webpack-cli": "3.3.10",
@@ -82,15 +82,9 @@
     "webpack-merge": "4.2.2"
   },
   "lint-staged": {
-    "linters": {
-      "*.{ts,tsx,css,js,json,yml}": [
-        "yarn run fmt",
-        "git add"
-      ]
-    },
-    "ignore": [
-      "dist",
-      "coverage"
+    "*.{ts,tsx,css,js,json,yml}": [
+      "yarn run fmt",
+      "git add"
     ]
   },
   "husky": {
