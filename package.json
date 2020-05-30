@@ -39,7 +39,7 @@
     "@types/react-redux": "7.1.9",
     "@types/react-router-dom": "5.1.5",
     "@types/react-test-renderer": "16.9.2",
-    "@types/redux-logger": "3.0.7",
+    "@types/redux-logger": "3.0.8",
     "@types/sinon": "7.5.2",
     "babel-loader": "8.1.0",
     "babel-plugin-transform-react-jsx-source": "6.22.0",
