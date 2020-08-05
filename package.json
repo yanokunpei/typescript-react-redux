@@ -15,7 +15,7 @@
     "stylelint": "stylelint './src/**/*.css'"
   },
   "dependencies": {
-    "@babel/runtime": "7.11.1",
+    "@babel/runtime": "7.11.2",
     "loaders.css": "0.1.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
