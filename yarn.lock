@@ -11728,10 +11728,10 @@ type-is@~1.6.17, type-is@~1.6.18:
     media-typer "0.3.0"
     mime-types "~2.1.24"
 
-typed-css-modules@0.6.7:
-  version "0.6.7"
-  resolved "https://registry.yarnpkg.com/typed-css-modules/-/typed-css-modules-0.6.7.tgz#0d3f2408fc56e103f8f55f145a5af667e1109659"
-  integrity sha512-MoajquYWzDM6uGSQ35gmIleoISOd/Czzonofq71QdAC5Uvq6b9o4oN8NIMVB030rATvM7qZ8Ng2OVqlUmU/ZPQ==
+typed-css-modules@0.6.8:
+  version "0.6.8"
+  resolved "https://registry.yarnpkg.com/typed-css-modules/-/typed-css-modules-0.6.8.tgz#0cb1e45d3d6c1739ce1f65bcf11bb9988a20515a"
+  integrity sha512-NCDFI7bR+PZGoEwAYPnUtDAeGuy9UrgS10oDV5K74tUX6gm3LRbPT3Mwu0f92/6VG4GgWPJRWZSlYmdQU8xLOg==
   dependencies:
     "@types/css-modules-loader-core" "^1.1.0"
     camelcase "^5.3.1"
